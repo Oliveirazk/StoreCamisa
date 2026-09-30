@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Meu Armário</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <!-- CABEÇALHO -->
+
+    <header>
+
+        <h1>Store</h1>
+
+        <p>Peças que não uso mais, mas que podem encontrar um novo dono.</p>
+
+    </header>
+
+
+    <!-- CATÁLOGO -->
+
+    <main>
+
+        <section class="catalogo" id="catalogo">
+
+            <!-- Os produtos serão adicionados pelo JavaScript -->
+
+        </section>
+
+    </main>
+
+
+    <!-- MODAL -->
+
+    <div id="modal" class="modal">
+
+        <div class="modal-conteudo">
+
+            <!-- Botão fechar -->
+
+            <button class="fechar" onclick="fecharModal()">
+                &times;
+            </button>
+
+
+            <!-- Imagem -->
+
+            <img id="modal-imagem" src="" alt="">
+
+
+            <!-- Informações -->
+
+            <div class="modal-info">
+
+                <span id="modal-status" class="status"></span>
+
+                <h2 id="modal-nome"></h2>
+
+                <p id="modal-tamanho"></p>
+
+                <p id="modal-estado"></p>
+
+                <p id="modal-descricao"></p>
+
+                <strong id="modal-preco"></strong>
+
+
+                <!-- WhatsApp -->
+
+                <button
+                    id="botao-whatsapp"
+                    class="botao-interesse"
+                >
+
+                    💬 Tenho interesse
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

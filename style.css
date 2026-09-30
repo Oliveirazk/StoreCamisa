@@ -1,0 +1,817 @@
+/* ========================================
+   1. CONFIGURAÇÕES GERAIS
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background-color: gray;
+
+    color: #171717;
+
+    min-height: 100vh;
+}
+
+
+/* ========================================
+   2. CABEÇALHO
+======================================== */
+
+header {
+    background-color: #f6f6f4;
+
+    text-align: center;
+
+    padding: 70px 20px 55px;
+
+    border-bottom: 1px solid #e9e9e7;
+}
+
+
+header h1 {
+    font-size: 46px;
+
+    font-weight: 700;
+
+    letter-spacing: -1.5px;
+
+    margin-bottom: 12px;
+}
+
+
+header p {
+    color: #777;
+
+    font-size: 16px;
+
+    letter-spacing: 0.2px;
+}
+
+
+/* ========================================
+   3. ÁREA PRINCIPAL
+======================================== */
+
+main {
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+    padding: 55px 30px 80px;
+}
+
+
+/* ========================================
+   4. CATÁLOGO
+======================================== */
+
+.catalogo {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+}
+
+
+/* ========================================
+   5. CARD DO PRODUTO
+======================================== */
+
+.produto {
+    position: relative;
+
+    background-color: #ffffff;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.produto:hover {
+    transform: translateY(-7px);
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.09);
+}
+
+
+/* ========================================
+   6. ÁREA DA IMAGEM
+======================================== */
+
+.produto-imagem {
+    position: relative;
+
+    width: 100%;
+
+    background-color: #eeeeec;
+
+    overflow: hidden;
+}
+
+
+.produto img {
+    width: 100%;
+
+    height: 390px;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.5s ease,
+        filter 0.4s ease;
+}
+
+
+/* Zoom suave ao passar o mouse */
+
+.produto:hover img {
+    transform: scale(1.035);
+}
+
+
+/* ========================================
+   7. PRODUTO VENDIDO
+======================================== */
+
+/*
+   Quando o produto estiver vendido,
+   o JavaScript continua mostrando
+   normalmente o card.
+
+   A aparência do status é controlada
+   pelas classes abaixo.
+*/
+
+
+.status {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    padding: 7px 12px;
+
+    border-radius: 30px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+
+    text-transform: uppercase;
+
+    backdrop-filter: blur(8px);
+}
+
+
+/* Disponível */
+
+.status-disponivel {
+    background-color: rgba(232, 248, 239, 0.94);
+
+    color: #177245;
+}
+
+
+/* Vendido */
+
+.status-vendido {
+    background-color: rgba(250, 234, 234, 0.95);
+
+    color: #b52d2d;
+}
+
+
+/* Status sobre a foto */
+
+.status-card {
+    position: absolute;
+
+    top: 16px;
+
+    left: 16px;
+
+    z-index: 5;
+}
+
+
+/* ========================================
+   8. INFORMAÇÕES DO PRODUTO
+======================================== */
+
+.produto-info {
+    padding: 23px 22px 22px;
+}
+
+
+.produto h2 {
+    font-size: 19px;
+
+    font-weight: 600;
+
+    letter-spacing: -0.3px;
+
+    margin-bottom: 9px;
+}
+
+
+.produto-tamanho {
+    color: #858585;
+
+    font-size: 14px;
+
+    margin-bottom: 17px;
+}
+
+
+.produto strong {
+    display: block;
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    color: #111111;
+
+    margin-bottom: 19px;
+}
+
+
+/* ========================================
+   9. BOTÃO "VER DETALHES"
+======================================== */
+
+.botao-detalhes {
+    width: 100%;
+
+    padding: 13px 16px;
+
+    border: 1px solid #171717;
+
+    border-radius: 9px;
+
+    background-color: #171717;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.1px;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.botao-detalhes:hover {
+    background-color: #333333;
+
+    transform: translateY(-1px);
+}
+
+
+.botao-detalhes:active {
+    transform: translateY(0);
+}
+
+
+/* ========================================
+   10. MODAL — FUNDO
+======================================== */
+
+.modal {
+    display: none;
+
+    position: fixed;
+
+    z-index: 1000;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    padding: 25px;
+
+    background-color: rgba(10, 10, 10, 0.72);
+
+    backdrop-filter: blur(5px);
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+/* ========================================
+   11. MODAL — CAIXA
+======================================== */
+
+.modal-conteudo {
+    position: relative;
+
+    width: 100%;
+
+    max-width: 900px;
+
+    max-height: 90vh;
+
+    overflow: hidden;
+
+    display: flex;
+
+    background-color: #ffffff;
+
+    border-radius: 18px;
+
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.28);
+
+    animation: modalAparecer 0.28s ease;
+}
+
+
+/* Animação */
+
+@keyframes modalAparecer {
+
+    from {
+        opacity: 0;
+
+        transform: scale(0.96) translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: scale(1) translateY(0);
+    }
+
+}
+
+
+/* ========================================
+   12. IMAGEM DO MODAL
+======================================== */
+
+.modal-conteudo > img {
+    width: 52%;
+
+    height: 540px;
+
+    display: block;
+
+    object-fit: cover;
+
+    background-color: #eeeeec;
+}
+
+
+/* ========================================
+   13. INFORMAÇÕES DO MODAL
+======================================== */
+
+.modal-info {
+    width: 48%;
+
+    padding: 55px 45px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+
+.modal-info h2 {
+    font-size: 32px;
+
+    line-height: 1.15;
+
+    letter-spacing: -0.8px;
+
+    margin-top: 18px;
+
+    margin-bottom: 27px;
+}
+
+
+.modal-info p {
+    color: #707070;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+
+    margin-bottom: 10px;
+}
+
+
+.modal-info strong {
+    font-size: 30px;
+
+    color: #111111;
+
+    margin-top: 18px;
+
+    margin-bottom: 25px;
+}
+
+
+/* ========================================
+   14. BOTÃO FECHAR
+======================================== */
+
+.fechar {
+    position: absolute;
+
+    top: 16px;
+
+    right: 16px;
+
+    z-index: 10;
+
+    width: 42px;
+
+    height: 42px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background-color: rgba(255, 255, 255, 0.94);
+
+    color: #222222;
+
+    font-size: 27px;
+
+    font-weight: 300;
+
+    line-height: 42px;
+
+    cursor: pointer;
+
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.fechar:hover {
+    background-color: #eeeeee;
+
+    transform: rotate(90deg);
+}
+
+
+/* ========================================
+   15. BOTÃO WHATSAPP
+======================================== */
+
+.botao-interesse {
+    width: 100%;
+
+    padding: 15px 18px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background-color: #25D366;
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.1px;
+
+    cursor: pointer;
+
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.18);
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.botao-interesse:hover {
+    background-color: #1ebe5d;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.25);
+}
+
+
+.botao-interesse:active {
+    transform: translateY(0);
+}
+
+
+/* ========================================
+   16. BOTÃO DESABILITADO
+======================================== */
+
+.botao-interesse.desabilitado {
+    background-color: #aaaaaa;
+
+    box-shadow: none;
+
+    cursor: not-allowed;
+}
+
+
+.botao-interesse.desabilitado:hover {
+    background-color: #aaaaaa;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+
+/* ========================================
+   17. SELEÇÃO DE TEXTO
+======================================== */
+
+::selection {
+    background-color: #171717;
+
+    color: #ffffff;
+}
+
+
+/* ========================================
+   18. TABLETS
+======================================== */
+
+@media (max-width: 1000px) {
+
+    main {
+        padding-left: 25px;
+
+        padding-right: 25px;
+    }
+
+
+    .catalogo {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 24px;
+    }
+
+
+    .produto img {
+        height: 360px;
+    }
+
+
+    .modal-conteudo {
+        max-width: 800px;
+    }
+
+
+    .modal-conteudo > img {
+        height: 500px;
+    }
+
+}
+
+
+/* ========================================
+   19. CELULARES
+======================================== */
+
+@media (max-width: 700px) {
+
+    header {
+        padding: 45px 20px 35px;
+    }
+
+
+    header h1 {
+        font-size: 34px;
+
+        letter-spacing: -1px;
+    }
+
+
+    header p {
+        font-size: 14px;
+    }
+
+
+    main {
+        padding: 30px 15px 50px;
+    }
+
+
+    .catalogo {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+
+    .produto {
+        border-radius: 14px;
+    }
+
+
+    .produto img {
+        height: 390px;
+    }
+
+
+    .produto-info {
+        padding: 20px;
+    }
+
+
+    /* Modal */
+
+    .modal {
+        padding: 12px;
+    }
+
+
+    .modal-conteudo {
+        flex-direction: column;
+
+        max-height: 94vh;
+
+        overflow-y: auto;
+
+        border-radius: 15px;
+    }
+
+
+    .modal-conteudo > img {
+        width: 100%;
+
+        height: 330px;
+
+        flex-shrink: 0;
+    }
+
+
+    .modal-info {
+        width: 100%;
+
+        padding: 28px 23px 25px;
+    }
+
+
+    .modal-info h2 {
+        font-size: 25px;
+
+        margin-top: 16px;
+
+        margin-bottom: 20px;
+    }
+
+
+    .modal-info strong {
+        font-size: 26px;
+
+        margin-top: 12px;
+
+        margin-bottom: 20px;
+    }
+
+
+    .fechar {
+        top: 12px;
+
+        right: 12px;
+    }
+
+}
+
+
+/* ========================================
+   20. CELULARES PEQUENOS
+======================================== */
+
+@media (max-width: 400px) {
+
+    header h1 {
+        font-size: 30px;
+    }
+
+
+    .produto img {
+        height: 340px;
+    }
+
+
+    .modal-conteudo > img {
+        height: 280px;
+    }
+
+
+    .modal-info {
+        padding: 25px 20px;
+    }
+
+}
+
+
+/* ========================================
+   FILTRO DE TAMANHO
+======================================== */
+
+.filtro-container {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 12px;
+
+    margin-bottom: 12px;
+}
+
+
+.filtro-container label {
+    font-size: 14px;
+
+    color: whitesmoke;
+
+    font-weight: 500;
+}
+
+
+#filtro-tamanho {
+    min-width: 140px;
+
+    padding: 11px 14px;
+
+    border: 1px solid #e0e0dd;
+
+    border-radius: 9px;
+
+    background-color: #ffffff;
+
+    color: #171717;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+#filtro-tamanho:hover {
+    border-color: #c5c5c2;
+}
+
+
+#filtro-tamanho:focus {
+    border-color: #171717;
+
+    box-shadow: 0 0 0 3px rgba(23, 23, 23, 0.08);
+}
+
