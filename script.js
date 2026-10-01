@@ -1,16 +1,6 @@
-// ========================================
-// CONFIGURAÇÃO DO WHATSAPP
-// =======================================
-
 const numeroWhatsApp = "5579996439719";
 
-
-// ========================================
-// PRODUTOS
-// ========================================
-
 const produtos = [
-
 
     {
         nome: "Camisa Chelsea Retrô",
@@ -185,9 +175,7 @@ const produtos = [
 ];
 
 
-// ========================================
-// CRIAR OS CARDS
-// ========================================
+// CARDS
 
 function carregarProdutos() {
 
@@ -265,9 +253,7 @@ function carregarProdutos() {
 }
 
 
-// ========================================
 // ABRIR MODAL
-// ========================================
 
 function mostrarDetalhes(indice) {
 
@@ -328,9 +314,7 @@ function mostrarDetalhes(indice) {
     }
 
 
-    // ========================================
-    // BOTÃO WHATSAPP
-    // ========================================
+    
 
     const botaoWhatsApp =
         document.getElementById("botao-whatsapp");
@@ -366,14 +350,10 @@ function mostrarDetalhes(indice) {
     }
 
     else {
-
-        // Se estiver vendido, o botão desaparece
-
         botaoWhatsApp.style.display = "none";
-
     }
 
-
+    
     // Mostrar modal
 
     document.getElementById("modal").style.display = "flex";
@@ -381,9 +361,7 @@ function mostrarDetalhes(indice) {
 }
 
 
-// ========================================
 // FECHAR MODAL
-// ========================================
 
 function fecharModal() {
 
@@ -393,9 +371,8 @@ function fecharModal() {
 }
 
 
-// ========================================
 // FECHAR CLICANDO FORA DO MODAL
-// ========================================
+
 
 window.onclick = function(event) {
 
@@ -411,9 +388,7 @@ window.onclick = function(event) {
 };
 
 
-// ========================================
 // FECHAR COM ESC
-// ========================================
 
 document.addEventListener("keydown", function(event) {
 
@@ -426,10 +401,6 @@ document.addEventListener("keydown", function(event) {
 });
 
 
-// ========================================
 // CARREGAR PRODUTOS
-// ========================================
 
 carregarProdutos();
-
-
