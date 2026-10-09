@@ -184,7 +184,7 @@ const produtos = [
 
         preco: "R$ 55,00",
 
-        imagem: "imagens/AdidasFrente.jpg",
+        imagem: "imagens/casacoP.png",
 
         disponivel: true
     },
@@ -201,7 +201,7 @@ const produtos = [
 
         preco: "R$ 70,00",
 
-        imagem: "imagens/AdidasFrente.jpg",
+        imagem: "imagens/CasacoM.png",
 
         disponivel: true
     },
@@ -218,7 +218,7 @@ const produtos = [
 
         preco: "R$ 65,00",
 
-        imagem: "imagens/AdidasFrente.jpg",
+        imagem: "imagens/CasacoV.png",
 
         disponivel: true
     }
