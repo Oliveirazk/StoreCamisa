@@ -170,6 +170,57 @@ const produtos = [
         imagem: "imagens/AdidasFrente.jpg",
 
         disponivel: true
+    },
+
+
+    {
+        nome: "Moletom Preto",
+
+        tamanho: "G",
+
+        estado: "Bem Usado",
+
+        descricao: "Moletom preto com estampa nas costas.",
+
+        preco: "R$ 55,00",
+
+        imagem: "imagens/AdidasFrente.jpg",
+
+        disponivel: true
+    },
+
+
+    {
+        nome: "Casaco/Corta Vento",
+
+        tamanho: "M",
+
+        estado: "Excelente",
+
+        descricao: "Pouco uso e muito bem conservada.",
+
+        preco: "R$ 70,00",
+
+        imagem: "imagens/AdidasFrente.jpg",
+
+        disponivel: true
+    },
+
+
+    {
+        nome: "Moletom Vermelho",
+
+        tamanho: "G",
+
+        estado: "Excelente",
+
+        descricao: "Muito bem conservada e bem confortável.",
+
+        preco: "R$ 65,00",
+
+        imagem: "imagens/AdidasFrente.jpg",
+
+        disponivel: true
     }
 
 ];
